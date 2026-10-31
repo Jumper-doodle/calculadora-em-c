@@ -2,8 +2,7 @@
 
 int main() {
     float a, b;
-    int operacao;
-    char parar;
+    char parar, operacao;
     
     do {
         printf("===============================\n");
@@ -17,12 +16,12 @@ int main() {
         printf("5. Sair\n");
         printf("Opção:\n");
         
-        while (scanf("%d", &operacao) != 1 || (operacao < 1 || operacao > 5)) {
+        while (scanf(" %c", &operacao) != 1 || (operacao < '1' || operacao > '5')) {
             printf("Opção inválida! Tente novamente.\n");
             while (getchar() != '\n');
         }
         
-        if (operacao == 5) {
+        if (operacao == '5') {
             printf("Tudo bem, até a próxima!\n");
             return 0;
         } else {
@@ -31,16 +30,16 @@ int main() {
             printf("Digite o segundo número:\n");
             scanf("%f", &b);
             
-            if (operacao == 1) {
+            if (operacao == '1') {
                 printf("Resultado: %.2f + %.2f = %.2f\n", a, b, a + b);
             } 
-            else if (operacao == 2) {
+            else if (operacao == '2') {
                 printf("Resultado: %.2f - %.2f = %.2f\n", a, b, a - b);
             } 
-            else if (operacao == 3) {
+            else if (operacao == '3') {
                 printf("Resultado: %.2f * %.2f = %.2f\n", a, b, a * b);
             } 
-            else if (operacao == 4) {
+            else if (operacao == '4') {
                 if (b == 0) {
                     printf("Erro: Divisão por zero não é permitida.\n");
                 } else {
@@ -56,7 +55,7 @@ int main() {
                 scanf(" %c", &parar);
             }
             
-            if (parar == 'n') {
+            if (parar == 'n' || parar == 'N') {
                 printf("Obrigado por usar a calculadora! Até a próxima.\n");
                 return 0;
             }

@@ -57,6 +57,9 @@ int main() {
                 scanf(" %c", &parar);
             }
             
+            
+            while (getchar() != '\n');
+            
             if (parar == 'n' || parar == 'N') {
                 printf("Obrigado por usar a calculadora! Até a próxima.\n");
                 return 0;
